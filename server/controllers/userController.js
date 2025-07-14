@@ -52,7 +52,7 @@ exports.login = (req, res) => {
 
         jwt.sign(
           payload,
-          'your_jwt_secret', // Replace with a secret from your config
+          process.env.JWT_SECRET, // Use environment variable for secret
           { expiresIn: 3600 },
           (err, token) => {
             if (err) throw err;

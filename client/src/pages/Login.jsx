@@ -14,7 +14,7 @@ const Login = () => {
   const onSubmit = async e => {
     e.preventDefault();
     try {
-      const res = await axios.post('/api/users/login', formData);
+      const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/users/login`, formData);
       console.log(res.data);
     } catch (err) {
       console.error(err.response.data);
